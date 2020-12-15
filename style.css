@@ -1,0 +1,444 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 62.5%;
+    }
+    
+    body {
+        background-color: rgb(14, 14, 231)
+    }
+    
+    .header {
+        width: 100%;
+        height: 70px;
+        background-color: rgb(14, 14, 231);
+        display: flex;
+        justify-content: space-between;
+    }
+    /* customizable snowflake styling */
+    
+    .snowflake {
+        color: #fff;
+        font-size: 1.5em;
+        font-family: Arial;
+        text-shadow: 0 0 1px #000;
+        perspective: 200px;
+    }
+    
+    @keyframes snowflakes-fall {
+        0% {
+            top: -10%;
+            font-size: 1em;
+            opacity: 0.4;
+        }
+        100% {
+            top: 100%;
+            font-size: 2em;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes snowflakes-shake {
+        0% {
+            transform: translateX(0px)
+        }
+        50% {
+            transform: translateX(90px) rotate3D(2, 10, 3, 460deg);
+        }
+        100% {
+            transform: translateX(0px)
+        }
+    }
+    
+    .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 13;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 10s, 4s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running
+    }
+    
+    .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s;
+    }
+    
+    .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s;
+    }
+    
+    .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, .5s;
+        animation-delay: 6s, .5s;
+    }
+    
+    .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s;
+    }
+    
+    .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s
+    }
+    
+    .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s
+    }
+    
+    .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s
+    }
+    
+    .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s
+    }
+    
+    .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 0.1s, 0s;
+        animation-delay: 0.1s, 0s
+    }
+    
+    .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s
+    }
+    
+    .snowflake:nth-of-type(10) {
+        left: 5%;
+        animation-delay: 3.2s, .8s;
+    }
+    
+    .snowflake:nth-of-type(11) {
+        left: 15%;
+        animation-delay: 1.5s, 3s;
+    }
+    
+    .snowflake:nth-of-type(12) {
+        left: 25%;
+        animation-delay: 2.8s, 1.2s;
+    }
+    
+    .snowflake:nth-of-type(13) {
+        left: 35%;
+        animation-delay: 4.3s, .3s;
+    }
+    
+    .snowflake:nth-of-type(14) {
+        left: 45%;
+        animation-delay: 5.8s, 2.5s;
+    }
+    
+    .snowflake:nth-of-type(15) {
+        left: 55%;
+        animation-delay: 7s, 3.6s;
+    }
+    
+    .snowflake:nth-of-type(16) {
+        left: 65%;
+        animation-delay: 8.2s, 2.5s;
+    }
+    
+    .snowflake:nth-of-type(17) {
+        left: 75%;
+        animation-delay: 6.7s, 4.2s;
+    }
+    
+    .snowflake:nth-of-type(18) {
+        left: 85%;
+        animation-delay: 7.8s, 7s;
+    }
+    
+    .snowflake:nth-of-type(19) {
+        left: 95%;
+        animation-delay: 8.4s, 5.7s;
+    }
+    /*estencion de luces navideñas*/
+    
+    .conten_lightrope {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        width: 100%;
+        top: 5px;
+        left: 20px;
+    }
+    
+    .luces {
+        position: relative;
+        list-style: none;
+        display: block;
+        width: 13px;
+        height: 28px;
+        border-radius: 50%;
+        margin-right: 7px;
+        display: inline-block;
+        animation-name: flash-1;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    .luces:nth-child(2n+1) {
+        box-shadow: 0px 5px 24px 3px rgba(0, 255, 255, 0.5);
+        animation-name: flash-2;
+        animation-duration: 1s;
+        animation-delay: 1s;
+    }
+    
+    .luces:nth-child(4n) {
+        box-shadow: 0px 5px 24px 3px rgba(247, 0, 148, 1);
+        animation-name: flash-3;
+        animation-duration: 1s;
+    }
+    
+    .luces:before {
+        content: "";
+        position: absolute;
+        background: #222;
+        width: 10px;
+        height: 9px;
+        border-radius: 4px;
+        left: 0.1rem;
+    }
+    
+    .luces:after {
+        content: "";
+        top: -5px;
+        left: 9px;
+        position: absolute;
+        width: 15px;
+        height: 9px;
+        border-bottom: solid #222 2px;
+        border-radius: 50%;
+    }
+    
+    .luces:last-child:after {
+        content: none;
+    }
+    
+    @keyframes flash-1 {
+        0%,
+        100% {
+            background: rgba(0, 247, 165, 1);
+            box-shadow: 0px 5px 24px 3px rgba(0, 247, 165, 1);
+        }
+        50% {
+            background: rgba(0, 247, 165, 0.4);
+            box-shadow: 0px 5px 24px 3px rgba(0, 247, 165, 0.2);
+        }
+    }
+    
+    @keyframes flash-2 {
+        0%,
+        100% {
+            background: rgba(0, 255, 255, 1);
+            box-shadow: 0px 5px 24px 3px rgba(0, 255, 255, 1);
+        }
+        50% {
+            background: rgba(0, 255, 255, 0.4);
+            box-shadow: 0px 5px 24px 3px rgba(0, 255, 255, 0.2);
+        }
+    }
+    
+    @keyframes flash-3 {
+        0%,
+        100% {
+            background: rgba(247, 0, 148, 1);
+            box-shadow: 0px 5px 24px 3px rgba(247, 0, 148, 1);
+        }
+        50% {
+            background: rgba(247, 0, 148, 0.4);
+            box-shadow: 0px 5px 24px 3px rgba(247, 0, 148, 0.2);
+        }
+    }
+    /*chirstmas ball*/
+    
+    .christmas {
+        position: absolute;
+        top: 185px;
+        right: 175px;
+        z-index: 3;
+    }
+    
+    .christmas img {
+        width: 100px;
+        height: 100px;
+        animation-name: ball;
+        animation-duration: 3s;
+        animation-timing-function: cubic-bezier(.08, .07, .92, .91);
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        transform-origin: top center;
+    }
+    
+    .christmas .img2 {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 4px;
+        right: 40px;
+        animation-name: ball;
+    }
+    
+    @keyframes ball {
+        0% {
+            transform: rotate3D(0, -1, -1, -30deg) scale(1);
+        }
+        50% {
+            transform: rotate3D(0, 0, 0, 0deg) scale(1);
+        }
+        100% {
+            transform: rotate3D(0, 1, 1, -30deg) scale(1);
+        }
+    }
+    
+    .container {
+        height: 400px;
+        width: 85%;
+        margin: 50px auto;
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    .papanoel {
+        background-image: url(https://images.prismic.io/vivaair/92cdc713-5653-456b-897e-1d861ea02c20_SpritePapaNoel.png?auto=compress,format);
+        background-size: 1600px 1800px;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: 0;
+        animation: spritex 0.8s steps(7) 9 forwards, spritey 6.4s steps(8) 1 forwards, run 4s ease-in-out 1 forwards;
+        animation-delay: 3s;
+    }
+    
+    @keyframes spritex {
+        0% {
+            background-position-x: 0px;
+        }
+        100% {
+            background-position-x: -1400px;
+        }
+    }
+    
+    @keyframes spritey {
+        0% {
+            background-position-y: 0px;
+        }
+        100% {
+            background-position-y: -1600px;
+        }
+    }
+    
+    @keyframes run {
+        0% {
+            left: 0px;
+        }
+        100% {
+            left: 80%;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        .papanoel {
+            background-size: 1200px 1350px;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            bottom: 0;
+            animation: spritex 0.8s steps(7) 9 forwards, spritey 6.4s steps(8) 1 forwards, run 4s ease-in-out 1 forwards;
+            animation-delay: 3s;
+        }
+        @keyframes spritex {
+            0% {
+                background-position-x: 0px;
+            }
+            100% {
+                background-position-x: -1050px;
+            }
+        }
+        @keyframes spritey {
+            0% {
+                background-position-y: 0px;
+            }
+            100% {
+                background-position-y: -1200px;
+            }
+        }
+        @keyframes run {
+            0% {
+                left: 0px;
+            }
+            100% {
+                left: 70%;
+            }
+        }
+    }
+    
+    @media (max-width: 650px) {
+        .papanoel {
+            background-size: 800px 900px;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            bottom: 0;
+            animation: spritex 0.8s steps(7) 9 forwards, spritey 6.4s steps(8) 1 forwards, run 4s ease-in-out 1 forwards;
+            animation-delay: 3s;
+        }
+        @keyframes spritex {
+            0% {
+                background-position-x: 0px;
+            }
+            100% {
+                background-position-x: -700px;
+            }
+        }
+        @keyframes spritey {
+            0% {
+                background-position-y: 0px;
+            }
+            100% {
+                background-position-y: -800px;
+            }
+        }
+        @keyframes run {
+            0% {
+                left: 0px;
+            }
+            100% {
+                left: 70%;
+            }
+        }
+    }
